@@ -18,6 +18,6 @@
 <title>가입 완료</title>
 </head>
 <body>
-${param.email }님, 회원가입에 성공했습니다.
+${param.email}님, 회원가입에 성공했습니다.
 </body>
 </html>
