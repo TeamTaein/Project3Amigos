@@ -12,7 +12,7 @@ import member.model.Member;
 
 public class MemberDao {
 	
-	public Member selectById(Connection conn, String email) throws SQLException{
+	public Member selectByEmail(Connection conn, String email) throws SQLException{
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
@@ -35,6 +35,31 @@ public class MemberDao {
 			JdbcUtil.close(rs, pstmt);			
 		}
 	}
+	
+	public Member selectById(Connection conn, String Id) throws SQLException{
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(
+					"select * from member where member_id = ?");
+			pstmt.setString(1, Id);
+			rs = pstmt.executeQuery();
+			Member member = null;
+			if(rs.next()) {
+				member = new Member (
+						rs.getString("member_id"),
+						rs.getString("member_name"),
+						rs.getString("member_password"),
+						rs.getString("member_gender"),						
+						rs.getString("member_email"),
+						toDate(rs.getTimestamp("regDate")));						
+			}
+			return member;
+		} finally {
+			JdbcUtil.close(rs, pstmt);			
+		}
+	}
+	
 
 	private Date toDate(Timestamp date) {
 		return date == null ? null : new Date(date.getTime());

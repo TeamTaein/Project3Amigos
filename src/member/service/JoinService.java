@@ -20,13 +20,23 @@ public class JoinService {
 			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false);
 			
-			//MemberDao의 selectById()를 이용해서 joinReq.getId()에 해당하는 회원 데이터를 구한다
-			Member member = memberDao.selectById(conn, joinReq.getId());
-			//가입하려는 ID에 해당하는 데이터가 이미 존재하면 트랜잭션 롤백, DuplicateIdException 발생
+			//MemberDao의 selectById()를 이용해서 joinReq.getEmail()에 해당하는 회원 데이터를 구한다
+			Member member = memberDao.selectByEmail(conn, joinReq.getEmail());
+			Member member1 = memberDao.selectById(conn, joinReq.getId());
+			//가입하려는 Email에 해당하는 데이터가 이미 존재하면 트랜잭션 롤백, DuplicateIdException 발생
 			if(member != null) {
+				
+				
 				JdbcUtil.rollback(conn);
 				throw new DuplicateIdException();
 			}
+			
+			else if(member1 != null) {
+				JdbcUtil.rollback(conn);
+				throw new DuplicateIdException();
+			}
+				
+			
 			
 			// joinReq 이용하여 Member 객체 생성, MemberDao의 insert()를 실행하여 데이터 삽입
 			memberDao.insert(conn, new Member(

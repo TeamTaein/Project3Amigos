@@ -10,7 +10,7 @@ public class LoginService {
 	
 	public User login(String email, String password) {
 		try(Connection conn = ConnectionProvider.getConnection()){
-			Member member = memberDao.selectById(conn, email);
+			Member member = memberDao.selectByEmail(conn, email);
 			if(member == null) {
 				throw new LoginFailException();
 			}if(!member.matchPassword(password)) {

@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import member.service.DuplicateEmailException;
 import member.service.DuplicateIdException;
 import member.service.JoinRequest;
 import member.service.JoinService;
@@ -64,9 +65,12 @@ public class JoinHandler implements CommandHandler {
 			// 회원가입에 성공한 경우 joinSuccess.jsp 뷰 리턴
 			joinService.join(joinReq);
 			return "/WEB-INF/view/joinSuccess.jsp";
-		} catch(DuplicateIdException e) {
-			// 동일한 아이디로 가입한 회원이 존재
-			// => errors에 "duplicateId" 키 추가, joinForm.jsp 뷰 리턴
+		} catch(DuplicateEmailException e) {
+			// 동일한 이메일로 가입한 회원이 존재
+			// => errors에 "duplicateEmail" 키 추가, joinForm.jsp 뷰 리턴
+			errors.put("duplicateEmail", Boolean.TRUE);
+			return FORM_VIEW;
+		} catch(DuplicateIdException ex) {
 			errors.put("duplicateId", Boolean.TRUE);
 			return FORM_VIEW;
 		}
