@@ -513,7 +513,7 @@ margin-left: 30px;
 <input type="password" placeholder="Confirm Password" name="confirmPassword" />
 <span class="text-danger blinkEle">
 	<c:if test="${errors.confirmPassword }"><br />확인을 입력하세요</c:if>
-	<c:if test="${errors.notMatch }">암호와 확인이 일치하지 않습니다.</c:if>
+	<c:if test="${errors.notMatch }"><br />암호와 확인이 일치하지 않습니다.</c:if>
 	</span>
 </div>
 <div class="form-group">
