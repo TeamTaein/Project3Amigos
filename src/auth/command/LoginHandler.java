@@ -12,7 +12,7 @@ import auth.service.User;
 import mvc.controller.CommandHandler;
 
 public class LoginHandler implements CommandHandler {
-	private static final String FORM_VIEW = "WEB-INF/view/index.jsp";
+	private static final String FORM_VIEW = "index.jsp";
 	private LoginService loginService = new LoginService();
 	
 	@Override

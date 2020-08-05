@@ -14,7 +14,7 @@ import mvc.controller.CommandHandler;
 // CommandHandler 인터페이스 구현
 public class JoinHandler implements CommandHandler {
 	
-	private static final String FORM_VIEW = "/WEB-INF/index.jsp";
+	private static final String FORM_VIEW = "index.jsp";
 	private JoinService joinService = new JoinService();
 		
 	@Override

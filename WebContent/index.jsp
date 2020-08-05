@@ -473,11 +473,10 @@ margin-left: 30px;
 	</c:if>
  <div class="cont_form_login">
 <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
- <form action="login.do" method="post">
    <h2>LOGIN</h2>
  <input type="text" placeholder="Email" name="email" value="${param.email}" />
 <input type="password" placeholder="Password" name="password"/>
-<button  class="btn_login" onclick="cambiar_login()">LOGIN</input>
+<button  class="btn_login" onclick="cambiar_login()">LOGIN</button>
   </div>
   </form>
    <div class="cont_form_sign_up">

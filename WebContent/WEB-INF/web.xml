@@ -19,7 +19,7 @@
     <param-name>poolConfig</param-name>
     <param-value>
   		jdbcdriver=com.mysql.cj.jdbc.Driver
-  		jdbcUrl=jdbc:mysql://localhost/m_board?serverTimezone=Asia/Seoul
+  		jdbcUrl=jdbc:mysql://localhost:3308/m_board?serverTimezone=Asia/Seoul
   		dbUser=root
   		dbPass=rootpw
   		validationQuery=SELET 1

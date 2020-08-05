@@ -12,7 +12,7 @@ public class LogoutHandler implements CommandHandler {
 	if(session != null) {
 		session.invalidate();
 	}
-	res.sendRedirect(req.getContextPath()+"/index.jsp");
+	res.sendRedirect("index.jsp");
 	return null;
 	
 	}
