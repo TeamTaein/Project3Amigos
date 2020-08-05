@@ -77,6 +77,8 @@ document.querySelector('.cont_form_login').style.display = "none";
   font-family: 'Open Sans', sans-serif;
 }
 
+
+
 .form-group{
 	font-size:small;
 }
@@ -429,9 +431,7 @@ margin-left: 30px;
 <u:isLogin>
 	${authUser.name}님, 안녕하세요 <br />
 	<a href="logout.do" class="text-danger">[로그아웃하기]</a>
-	<a href="article/list.do">[게시글
-	
-	 보기]</a>
+	<a href="article/list.do">[게시글보기]</a>
 </u:isLogin>
  
 <u:notLogin>
@@ -492,41 +492,41 @@ margin-left: 30px;
 
 <div class="form-group">
 <input type="text" placeholder="Email" name="email" value="${param.email}" >
-<span class="text-danger blinkEle">
-	<c:if test="${errors.email }"><br />이메일을 입력하세요</c:if>
-	<c:if test="${errors.duplicateEmail}"><br />이미 사용중인 이메일입니다.</c:if>
+<span class="text-danger">
+	<c:if test="${errors.email }">이메일을 입력하세요</c:if>
+	<c:if test="${errors.duplicateEmail}">이미 사용중인 이메일입니다.</c:if>
 	</span>	
 </div>
 <div class="form-group">
 <input type="text" placeholder="User" name="name" value="${param.name}" />
-<span class="text-danger blinkEle">
-	<c:if test="${errors.name }"><br />이름을 입력하세요</c:if>
+<span class="text-danger">
+	<c:if test="${errors.name }">이름을 입력하세요</c:if>
 	</span>
 </div>
 <div class="form-group">
 <input type="password" placeholder="Password" name="password" />
-<span class="text-danger blinkEle">
-	<c:if test="${errors.password }"><br />암호를 입력하세요</c:if>
+<span class="text-danger">
+	<c:if test="${errors.password }">암호를 입력하세요</c:if>
 	</span>
 </div>
 <div class="form-group">
 <input type="password" placeholder="Confirm Password" name="confirmPassword" />
-<span class="text-danger blinkEle">
-	<c:if test="${errors.confirmPassword }"><br />확인을 입력하세요</c:if>
-	<c:if test="${errors.notMatch }"><br />암호와 확인이 일치하지 않습니다.</c:if>
+<span class="text-danger">
+	<c:if test="${errors.confirmPassword }">확인을 입력하세요</c:if>
+	<c:if test="${errors.notMatch }">암호와 확인이 일치하지 않습니다.</c:if>
 	</span>
 </div>
 <div class="form-group">
 <input type="text" placeholder="nickname" name="id" value="${param.id}"/><br />
-	<span class="text-danger blinkEle">
-<c:if test="${errors.id }"><br />닉네임을 입력하세요</c:if>
-<c:if test="${errors.duplicateId}"><br />이미 사용중인 닉네임입니다.</c:if>
+	<span class="text-danger">
+<c:if test="${errors.id }">닉네임을 입력하세요</c:if>
+<c:if test="${errors.duplicateId}">이미 사용중인 닉네임입니다.</c:if>
 	</span>
 </div>
 <div class="form-group">
 <label ><input type="radio" name="gender" value="male" />남자</label>
 <label ><input type="radio" name="gender" value="femail" />여자</label><br />
-<span class="text-danger blinkEle">
+<span class="text-danger">
 	<c:if test="${errors.gender }" >성별을 체크하세요</c:if>
 	</span>
 </div>

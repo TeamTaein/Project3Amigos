@@ -15,7 +15,7 @@ public class ArticleContent {
 		this.content = content;
 		this.fileName = fileName;
 	}
-
+ 
 	public String getContent() {
 		return content;
 	}

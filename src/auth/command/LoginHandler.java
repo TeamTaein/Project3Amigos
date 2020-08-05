@@ -26,7 +26,7 @@ public class LoginHandler implements CommandHandler {
 			res.setStatus(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
 			return null;
 		}
-	}
+	} 
 	private String processForm(HttpServletRequest req, HttpServletResponse res) {
 		return FORM_VIEW;
 	}

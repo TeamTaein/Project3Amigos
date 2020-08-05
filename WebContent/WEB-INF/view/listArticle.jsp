@@ -21,13 +21,14 @@
 
 <div class="container">
 <table class="table table-bordered">
+	<tr class="header"><h1>게시판</h1></tr>
 	<tr>
-		<td colspan="4"><a href="write.do">[게시글쓰기]</a>
-		<u:isLogin><a href="logout.do" class="text-danger">[로그아웃하기]</a></u:isLogin>
+		<td colspan="5"><a href="write.do">[게시글쓰기]</a>
+		<u:isLogin><a href="/m_board/logout.do" class="text-danger">[로그아웃하기]</a></u:isLogin>
 		</td>
 		
 	</tr>	
-	
+	 
 	<tr>
 		<td>번호</td>
 		<td>제목</td>
@@ -59,7 +60,7 @@
 
 <c:if test="${articlePage.hasArticles() }">
 	<tr>
-		<td colspan="4">
+		<td colspan="5">
 			<c:if test="${articlePage.startPage > 5 }">
 				<a href="list.do?pageNo=${articlePage.startPage - 5 }">이전</a>
 			</c:if>

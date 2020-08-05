@@ -3,15 +3,15 @@ package article.model;
 import java.util.Date;
 
 public class Article {
-
+	
 	private Integer number;
 	private Writer writer;
 	private String localName;
 	private String title;
 	private Date regDate;
 	private Date modifiedDate;
-	private int readCount;
-
+	private int readCount; 
+	  
 	public Article(Integer number, Writer writer, String localName, String title, Date regDate, Date modifiedDate,
 			int readCount) {
 		super();
@@ -51,8 +51,8 @@ public class Article {
 	public int getReadCount() {
 		return readCount;
 	}
-
-
-
+	
+	
+	
 
 }

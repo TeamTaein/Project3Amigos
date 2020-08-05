@@ -9,10 +9,10 @@ import article.model.ArticleContent;
 import jdbc.JdbcUtil;
 
 public class ArticleContentDao {
-
+	 
 	public ArticleContent insert(Connection conn, ArticleContent content) throws SQLException{
 		PreparedStatement pstmt = null;
-
+		
 		try {
 			pstmt = conn.prepareStatement("insert into article_content "
 					+ "(article_no, content, file_name) values (?,?,?)");
@@ -25,14 +25,15 @@ public class ArticleContentDao {
 			} else {
 				return null;
 			}
-		} finally {
+		} finally { 
 			JdbcUtil.close(pstmt);
 		}
 	}
+	
 	public ArticleContent selectById(Connection conn, int no) throws SQLException{
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-
+		
 		try {
 			pstmt = conn.prepareStatement(
 					"select * from article_content where article_no = ?");
@@ -51,6 +52,5 @@ public class ArticleContentDao {
 		}
 	}
 
-
-
+	
 }

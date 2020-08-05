@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-
+        
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+ 
 <title>게시글 쓰기</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
 	제목: <br /><input type="text" name="title" value="${param.title }" />
 	<c:if test="${errors.title }">제목을 입력하세요</c:if>
 	<br />
-	지역 : <br /><input type="text" name="localName" value="${param.localName }" />
+	지역 : <br /><input type="text" name="local_name" value="${param.local_name }" />
 </p>
 <p>
 	내용: <br />
@@ -38,4 +38,4 @@
 <input type="submit" value="새 글 등록" />
 </form>
 </body>
-</html> 
+</html>

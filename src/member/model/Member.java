@@ -10,7 +10,7 @@ public class Member {
 	private String gender;
 	private String email;
 	private Date regDate;
-	
+	 
 	public Member(String id, String name, String password, String gender,
 			String email, Date regDate) {
 		this.id = id;
