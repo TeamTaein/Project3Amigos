@@ -429,7 +429,9 @@ margin-left: 30px;
 <u:isLogin>
 	${authUser.name}님, 안녕하세요 <br />
 	<a href="logout.do" class="text-danger">[로그아웃하기]</a>
-
+	<a href="article/list.do">[게시글
+	
+	 보기]</a>
 </u:isLogin>
  
 <u:notLogin>
